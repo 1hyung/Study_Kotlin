@@ -14,9 +14,31 @@ fun main() {
         println("i = $i")
     }
 }*/
-// 2-11 과제
-fun main () {
-    println("메뉴를 선택해주세요.")
-    println("1. 게임이 시작되었습니다.")
-    println("2. 게임이 종료되었습니다.")
+// 3-1 객체지향 코드 예시
+class Hero {
+    var damage = 10
+    var healthPoint = 100
+
+    fun attack(target: Enemy) {
+        println("공격했다!")
+        target.takeAttack(this.damage)
+    }
+}
+
+class Enemy {
+    var damage = 10
+    var healthPoint = 100
+
+    fun takeAttack(damage: Int) {
+        println("공격받았다!")
+        this.healthPoint -= damage
+    }
+}
+
+
+fun main() {
+    val hero = Hero()
+    val enemy = Enemy()
+
+    hero.attack(enemy)
 }
