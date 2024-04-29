@@ -14,6 +14,7 @@ fun main() {
         println("i = $i")
     }
 }*/
+/*
 // 3-1 객체지향 코드 예시
 class Hero {
     var damage = 10
@@ -41,4 +42,24 @@ fun main() {
     val enemy = Enemy()
 
     hero.attack(enemy)
+}*/
+//lv1.
+fun main() {
+    println("메뉴를 입력해주세요.")
+    println("1. 게임 시작하기")
+    println("2. 게임 끝내기")
+
+    val selcetMenu = readLine()!!.toInt()
+
+    when (selcetMenu) {
+        1 -> startGame()
+        2 -> endGame()
+    }
+}
+fun startGame() {
+    println("게임이 시작되었습니다.")
+}
+
+fun endGame() {
+    println("게임이 종료되었습니다.")
 }
