@@ -47,17 +47,45 @@ fun main() {
 fun main() {
     println("메뉴를 입력해주세요.")
     println("1. 게임 시작하기")
-    println("2. 게임 끝내기")
+    println("2. 캐릭터 추가")
+    println("3. 게임 끝내기")
 
     val selcetMenu = readLine()!!.toInt()
 
     when (selcetMenu) {
         1 -> startGame()
-        2 -> endGame()
+        2 -> createCharacter()
+        3 -> endGame()
+
     }
 }
+
 fun startGame() {
     println("게임이 시작되었습니다.")
+}
+
+fun createCharacter() { // <Map<String, String>> 원래 이 구조인가?
+    val characterList: MutableList<Map<String, String>> = mutableListOf()
+
+    var isNeedMoreCharacter = "Y"
+
+    while (isNeedMoreCharacter == "Y") {
+        println("추가할 캐릭터의 이름을 입력해주세요.")
+        val name = readLine() ?: "" // ?: "" 이해가 안가네
+
+        println("추가할 캐릭터의 직업을 입력해주세요.")
+        val job = readLine() ?: ""
+
+        val character = mapOf("name" to name, "job" to job)
+
+        characterList.add(character)
+
+        println("사용자를 더 추가하시겠습니까? (Y: 추가, N: 그만두기)")
+        isNeedMoreCharacter = readLine() ?: "N"
+    }
+    characterList.forEach { // 왜 forEach지?
+        println(it)
+    }
 }
 
 fun endGame() {
