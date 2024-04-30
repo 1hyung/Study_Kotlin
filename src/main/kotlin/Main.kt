@@ -43,7 +43,7 @@ fun main() {
 
     hero.attack(enemy)
 }*/
-//lv1.
+//lv1
 fun main() {
     println("메뉴를 입력해주세요.")
     println("1. 게임 시작하기")
