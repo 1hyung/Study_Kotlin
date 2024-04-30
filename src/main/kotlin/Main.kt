@@ -13,8 +13,7 @@ fun main() {
         // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
         println("i = $i")
     }
-}*/
-/*
+}*//*
 // 3-1 객체지향 코드 예시
 class Hero {
     var damage = 10
@@ -43,21 +42,39 @@ fun main() {
 
     hero.attack(enemy)
 }*/
-//lv1 -> lv2
+//lv1 -> lv2 -> lv3
 fun main() {
+    var isValidMenu = false
+    var selectedMenu = 0
+
+    while (isValidMenu == false) {
+        try {
+            selectedMenu = getMenuNumber()
+            isValidMenu = true
+        } catch (e: Exception) { // 왜 예외처리를 했지
+            e.printStackTrace() // 확실한 예외처리
+            isValidMenu = false
+        }
+    }
+    when (selectedMenu) {
+        1 -> startGame()
+        2 -> createCharacter()
+        3 -> endGame()
+    }
+}
+
+fun getMenuNumber(): Int {
     println("메뉴를 입력해주세요.")
     println("1. 게임 시작하기")
     println("2. 캐릭터 추가")
     println("3. 게임 끝내기")
 
-    val selcetMenu = readLine()!!.toInt()
+    val userInput = readLine()!!.toInt()
 
-    when (selcetMenu) {
-        1 -> startGame()
-        2 -> createCharacter()
-        3 -> endGame()
-
+    if (userInput < 1 || userInput > 3) { // || 뭐지? 느낌이 1~3 사이 선택 안하면 입력이 잘못됐다는거 같은데
+        throw Exception("입력이 잘못되었습니다.") // 입력이 잘못되었습니다 출력이 왜 안돼??
     }
+    return userInput
 }
 
 fun startGame() {
