@@ -1,6 +1,6 @@
 package org.example
 
-//lv2. null처리 1번
+//lv2. null처리 2번
 fun main() {
     println("메뉴를 입력해주세요.")
     println("1. 게임 시작하기")
