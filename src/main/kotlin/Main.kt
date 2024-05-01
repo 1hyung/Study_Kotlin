@@ -150,6 +150,7 @@ fun main() {
     }
 }
 */
+/*
 //계산기 과제 기초 해설
 class Score(
     var num: Int
@@ -166,4 +167,35 @@ fun callByReference(score: Score) {
     println("3. ${score.num}")
     score.num += 50
     println("4. ${score.num}")
+}*/
+fun main() {
+    var bird = Bird() //인스턴스화 하고 있다, 실체화
+    var chicken = Chicken()
+    var sparrow = Sparrow()
+    var pigeon = Pigeon()
+
+    bird.fly()
+    chicken.fly()
+    sparrow.fly()
+    pigeon.fly()
+}
+
+open class Bird { // 상속 받기 위해 open이라는 키워드를 붙여주고 그것을 아래의 Chicken, Sparrow, Pigeon이 상속을 받는다.
+    fun fly() {
+        println("새는 날아요~")
+    }
+}
+//Chicken, Sparrow, Pigeon은 fun fly가 없지만 Bird()를 상속을 받았기 때문에 동작을 할 수 있다.
+//상속을 받지 않았다면 각각 fun fly를 만들어줘야 한다.
+//fun fly를 수정하면 상속 받은 나머지 클래스도 다 같이 수정된다.
+class Chicken : Bird() {
+
+}
+
+class Sparrow : Bird() {
+
+}
+
+class Pigeon : Bird() {
+
 }
