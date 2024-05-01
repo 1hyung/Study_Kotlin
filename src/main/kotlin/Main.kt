@@ -112,6 +112,7 @@
 // fun endGame() {
 // println("게임이 종료되었습니다.")
 
+/*
 fun main() {
     interface Character {
         fun attack(target: Character)
@@ -148,4 +149,21 @@ fun main() {
         }
     }
 }
+*/
+//계산기 과제 기초 해설
+class Score(
+    var num: Int
+)
 
+fun main() {
+    val score = Score(10)
+    println("1. ${score.num}")
+    callByReference(score)
+    println("2. ${score.num}")
+}
+
+fun callByReference(score: Score) {
+    println("3. ${score.num}")
+    score.num += 50
+    println("4. ${score.num}")
+}
