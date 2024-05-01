@@ -168,6 +168,7 @@ fun callByReference(score: Score) {
     score.num += 50
     println("4. ${score.num}")
 }*/
+/*
 fun main() {
     var bird = Bird() //인스턴스화 하고 있다, 실체화
     var chicken = Chicken()
@@ -197,5 +198,41 @@ class Sparrow : Bird() {
 }
 
 class Pigeon : Bird() {
+
+}*/
+
+fun main() {
+    var bird = Bird("새")
+    var chicken = Chicken("닭")
+    var sparrow = Sparrow("참새")
+    var pigeon = Pigeon("비둘기")
+
+    bird.fly()
+    chicken.fly()
+    sparrow.fly()
+    pigeon.fly()
+}
+// 생성자를 사용할 때 class를 만들면서 생성하면서 미리 전달해야 하는 값 var name: String를 () 소괄호 안에다
+//넣을 수가 있었는데 생성자를 사용하는 경우에는 자식 객체에서도 이 값을 전달해줘야 한다. #1
+
+open class Bird(
+    var name: String
+) {
+    fun fly() {
+        println("${name} 날아요~") //Bird의 날아요는 자기가 가지고 있는 name을 가지고 날아요를 하는 것이다.
+    }
+
+}
+//#1 부모 클래스 Bird가 name이라는 값을 받아야 한다. Bird를 상속하는 입장에서도 어떻게든 Bird에 생성자를 호출하면서 값을 전달을 해야함
+//Chicken은 Chicken 클래스 생성자에서 name: String을 받아서 요걸 그대로 Bird(name)에 전달해줘라
+class Chicken(name: String) : Bird(name) {
+
+}
+
+class Sparrow(name: String) : Bird(name) {
+
+}
+
+class Pigeon(name: String) : Bird(name) {
 
 }
