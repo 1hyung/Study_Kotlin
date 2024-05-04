@@ -238,9 +238,9 @@ class Pigeon(name: String) : Bird(name) {
 
 //주 생성자의 사용 예시
 // 클래스 선언부에 생성자를 명시함
-class Character(
-    var name:String,
-    var hairColor:String,
+class Character( //클래스를 만들면서 () 소괄호를 열고 닫고 / 소괄호 안에 들어가는 부분이 주 생성자라고 볼 수 있음.
+    var name:String, // Character를 만들 때는 name, hairColor, height가 필요하다 이것을 전달해줘야 한다.
+    var hairColor:String, // 너가 인스턴트를 만들 떄는 요 3가지 값을 전달해야 한다. 이것이 주 생성자
     var height:Double
 ) {
     fun fireBall() {
