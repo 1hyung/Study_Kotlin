@@ -200,7 +200,7 @@ class Sparrow : Bird() {
 class Pigeon : Bird() {
 
 }*/
-
+/*// study: class
 fun main() {
     var bird = Bird("새")
     var chicken = Chicken("닭")
@@ -234,5 +234,21 @@ class Sparrow(name: String) : Bird(name) {
 }
 
 class Pigeon(name: String) : Bird(name) {
+}*/
 
+//주 생성자의 사용 예시
+// 클래스 선언부에 생성자를 명시함
+class Character(
+    var name:String,
+    var hairColor:String,
+    var height:Double
+) {
+    fun fireBall() {
+        println("파이어볼!")
+    }
+    fun compositing(device1:String, device2:String): String {
+        var device3 = device1 + device2
+        println("새로운 무기인 ${device3}입니다")
+        return device3
+    }
 }
