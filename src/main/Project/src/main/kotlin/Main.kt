@@ -261,10 +261,11 @@ class Character {
 
     // 명시적 생성자 (Constructor)
     // _name, _hairColor, _height와 같이 생성자에 변수를 넘기는 경우에 사용함
-    constructor(_name: String, _hairColor: String, _height: Double) {
-        println("${_name}을 생성자로 넘겼어요")
-        println("${_hairColor}를 생성자로 넘겼어요")
-        println("${_height}를 생성자로 넘겼어요")
+    constructor(_name: String, _hairColor: String, _height: Double) { //부 생성자는 constructor 키워드로 만들 수 있다
+        println("${_name}을 생성자로 넘겼어요") // Character가 주 생성자와 똑같이 name, hairColor, height가 있는데 명시적 생성자인 Constructor를 사용해서
+        println("${_hairColor}를 생성자로 넘겼어요") // var name: String = "", var hairColor: String = "", var height: Double = 0.0 초기화 하는 부분을 만들 수 있다.
+        println("${_height}를 생성자로 넘겼어요") // constructor (생성자가 받아야 할 매개변수) {이걸 가지고 생성하면서 실행할 로직} 을 작성
+        //3가지 전달 받은 매개변수를 각각 생성자로 넘겼어요 라고 출력을 하고 _name으로 전달 받은 값을 var name 전달 _hairColor, _height도 동일
 
         name = _name
         hairColor = _hairColor
@@ -276,6 +277,50 @@ class Character {
     }
     fun compositing(device1:String, device2:String): String {
         val device3 = device1 + device2
+        println("새로운 무기인 ${device3}입니다")
+        return device3
+    }
+}
+//두 개의 생성자를 선택해서 실체화
+class Character {
+    var name: String = ""
+    var hairColor: String = ""
+    var height: Double = 0.0
+    var age: Int = 0
+    var gender: String = ""
+
+    // 명시적 생성자 (Constructor)
+    // _name, _hairColor, _height와 같이 생성자에 변수를 넘기는 경우에 사용함
+    constructor(_name: String, _hairColor: String, _height: Double) {
+        println("${_name}을 생성자로 넘겼어요")
+        println("${_hairColor}를 생성자로 넘겼어요")
+        println("${_height}를 생성자로 넘겼어요")
+        name = _name
+        hairColor = _hairColor
+        height = _height
+    }
+
+    // _name, _hairColor, _height, _age, _gender와 같이 생성자에 변수를 넘기는 경우에 사용함
+    constructor(_name: String, _hairColor: String, _height: Double, _age: Int, _gender: String) {
+        println("${_name}을 생성자로 넘겼어요")
+        println("${_hairColor}를 생성자로 넘겼어요")
+        println("${_height}를 생성자로 넘겼어요")
+        println("${_age}를 생성자로 넘겼어요")
+        println("${_gender}를 생성자로 넘겼어요")
+
+        name = _name
+        hairColor = _hairColor
+        height = _height
+        age = _age
+        gender = _gender
+    }
+
+    fun fireBall() {
+        println("파이어볼!")
+    }
+
+    fun compositing(device1: String, device2: String): String {
+        var device3 = device1 + device2
         println("새로운 무기인 ${device3}입니다")
         return device3
     }
