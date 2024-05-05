@@ -327,11 +327,14 @@ class Character {
 }*/
 
 //3-7 접근제한자
+// AccessTestClass를 만들어서
+//싱태에 접근제한자가 없는거, public이 있는거, private가 있는 것을 만듦
 class AccessTestClass {
     var b = 2
     public var a:Int = 1
     private var c = 3
 
+    //함수에 접근제한자가 없는거, public이 있는거, private가 있는 것을 만듦
     fun publicTest() {
         println("public 입니다")
     }
@@ -343,4 +346,14 @@ class AccessTestClass {
     private fun privateTest() {
         println("private 입니다")
     }
+}
+// 위처럼 만들고 main함수에서
+fun main() {
+    var accessTestClass = AccessTestClass()
+    //AccessTestClass() 생성해서 인스턴스 하나를 생성했음.
+// . 하고 접근가능한 요소를 확인
+//    accessTestClass.
+    accessTestClass.b //접근이 됨
+    accessTestClass.a //접근이 됨
+    accessTestClass.c //private이기 때문에 접근이 안됨
 }
