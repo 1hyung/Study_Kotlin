@@ -326,6 +326,7 @@ class Character {
     }
 }*/
 
+/*
 //3-7 접근제한자
 // AccessTestClass를 만들어서
 //싱태에 접근제한자가 없는거, public이 있는거, private가 있는 것을 만듦
@@ -356,4 +357,66 @@ fun main() {
     accessTestClass.b //접근이 됨
     accessTestClass.a //접근이 됨
     accessTestClass.c //private이기 때문에 접근이 안됨
+}*/
+
+fun main() {
+    var bird = Bird("새")
+    var chicken = Chicken("닭", 2)
+    var sparrow = Sparrow("참새", "갈색")
+    var pigeon = Pigeon("비둘기", "서울")
+
+    bird.fly()
+    chicken.fly()
+    sparrow.fly()
+    pigeon.fly()
+}
+
+open class Bird(
+    val name: String
+) {
+    open fun fly() {
+        println("${name}은 날아요~")
+    }
+}
+
+class Chicken(
+    name: String,
+    val age: Int
+) : Bird(name) {
+
+    override fun fly() {
+//        super객체는 부모의 객체를 의미하며 자동으로 생성됨
+//        즉 부모객체의 fly메소드를 부르는 행위임
+//        필요없으니 주석처리완료
+//        super.fly()
+        println("${age}살의 ${name}가 날아봅니다~ 꼬끼오!")
+    }
+}
+
+class Sparrow(
+    name: String,
+    val color: String
+) : Bird(name) {
+
+    override fun fly() {
+//        super객체는 부모의 객체를 의미하며 자동으로 생성됨
+//        즉 부모객체의 fly메소드를 부르는 행위임
+//        필요없으니 주석처리완료
+//        super.fly()
+        println("${color}의 ${name}이 날아봅니다~ 짹짹!")
+    }
+}
+
+class Pigeon(
+    name: String,
+    val address: String
+) : Bird(name) {
+
+    override fun fly() {
+//        super객체는 부모의 객체를 의미하며 자동으로 생성됨
+//        즉 부모객체의 fly메소드를 부르는 행위임
+//        필요없으니 주석처리완료
+//        super.fly()
+        println("${address} 살고있는 ${name}가 날아봅니다~ 구구!")
+    }
 }
