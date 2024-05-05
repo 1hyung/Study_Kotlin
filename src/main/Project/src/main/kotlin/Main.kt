@@ -236,7 +236,7 @@ class Sparrow(name: String) : Bird(name) {
 class Pigeon(name: String) : Bird(name) {
 }*/
 
-//주 생성자의 사용 예시
+/*//주 생성자의 사용 예시
 // 클래스 선언부에 생성자를 명시함
 class Character( //클래스를 만들면서 () 소괄호를 열고 닫고 / 소괄호 안에 들어가는 부분이 주 생성자라고 볼 수 있음.
     var name:String, // Character를 만들 때는 name, hairColor, height가 필요하다 이것을 전달해줘야 한다.
@@ -323,5 +323,24 @@ class Character {
         var device3 = device1 + device2
         println("새로운 무기인 ${device3}입니다")
         return device3
+    }
+}*/
+
+//3-7 접근제한자
+class AccessTestClass {
+    var b = 2
+    public var a:Int = 1
+    private var c = 3
+
+    fun publicTest() {
+        println("public 입니다")
+    }
+
+    public fun publicTest2() {
+        println("public 입니다")
+    }
+
+    private fun privateTest() {
+        println("private 입니다")
     }
 }
